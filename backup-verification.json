@@ -13,5 +13,10 @@
     "rowCountDifferences": [],
     "fullDatabaseRestoreTested": false
   },
-  "restoreRehearsalPerformed": false
+  "restoreRehearsalPerformed": false,
+  "githubDownloadedAssetChecksum": "passed",
+  "githubDownloadedAssetDecryption": "passed",
+  "githubDownloadedPayloadChecksums": "passed",
+  "sourceSnapshotMatchesWorkspace": true,
+  "originalWorkspaceUnchanged": true
 }
