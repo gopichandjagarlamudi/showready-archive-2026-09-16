@@ -1,0 +1,60 @@
+{
+  "cli": {
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://showready-intake-web.vercel.app",
+        "EXPO_PUBLIC_SITE_URL": "https://showreadyapp.com"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://showready-intake-web.vercel.app",
+        "EXPO_PUBLIC_SITE_URL": "https://showreadyapp.com"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "environment": "production",
+      "env": {
+        "EXPO_PUBLIC_API_BASE_URL": "https://showready-intake-web.vercel.app",
+        "EXPO_PUBLIC_SITE_URL": "https://showreadyapp.com"
+      },
+      "ios": {
+        "image": "sdk-54"
+      },
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  },
+  "submit": {
+    "internal": {
+      "android": {
+        "track": "internal",
+        "releaseStatus": "completed"
+      }
+    },
+    "production": {
+      "ios": {
+        "ascAppId": "6762884175"
+      },
+      "android": {
+        "track": "production",
+        "releaseStatus": "inProgress",
+        "rollout": 0.1
+      }
+    }
+  }
+}

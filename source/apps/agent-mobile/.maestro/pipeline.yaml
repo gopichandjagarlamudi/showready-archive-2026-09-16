@@ -1,0 +1,30 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- openLink: showready://pipeline
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- assertVisible:
+    id: pipeline-screen
+- runFlow:
+    when:
+      visible:
+        id: pipeline-clear-search
+    commands:
+      - tapOn:
+          id: pipeline-clear-search
+- tapOn:
+    id: pipeline-search-input
+- inputText: Appointment
+- hideKeyboard
+- waitForAnimationToEnd:
+    timeout: 5000
+- scrollUntilVisible:
+    element:
+      id: pipeline-open-bd30eb53-5bc1-460d-95a2-13c2f7c5e2bb
+    direction: DOWN
+    timeout: 25000
+    speed: 60

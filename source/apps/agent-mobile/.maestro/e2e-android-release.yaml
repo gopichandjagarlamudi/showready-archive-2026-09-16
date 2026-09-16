@@ -1,0 +1,10 @@
+appId: ${APP_ID}
+---
+- runFlow: sign-in.yaml
+- runFlow: dashboard.yaml
+- runFlow: review-lead.yaml
+- runFlow: pipeline.yaml
+- runFlow: lead-detail.yaml
+- runFlow: appointments.yaml
+- runFlow: settings.yaml
+- runFlow: sign-out.yaml

@@ -1,0 +1,38 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "types": [
+      "jest",
+      "react",
+      "react-native"
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@showready/application": [
+        "../../packages/application/src/index.ts"
+      ],
+      "@showready/contracts": [
+        "../../packages/contracts/src/index.ts"
+      ],
+      "@showready/design-system": [
+        "../../packages/design-system/src/index.ts"
+      ],
+      "@showready/domain": [
+        "../../packages/domain/src/index.ts"
+      ],
+      "@showready/infrastructure": [
+        "../../packages/infrastructure/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
+}

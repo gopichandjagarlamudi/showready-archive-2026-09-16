@@ -1,0 +1,22 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- openLink: showready://settings
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- assertVisible:
+    id: settings-screen
+- scrollUntilVisible:
+    element:
+      id: settings-sign-out-button
+    direction: DOWN
+    timeout: 8000
+- tapOn:
+    id: settings-sign-out-button
+- extendedWaitUntil:
+    visible:
+      id: sign-in-screen
+    timeout: 15000

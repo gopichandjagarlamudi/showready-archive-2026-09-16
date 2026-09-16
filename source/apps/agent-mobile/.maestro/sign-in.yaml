@@ -1,0 +1,41 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- extendedWaitUntil:
+    visible:
+      id: sign-in-screen
+    timeout: 45000
+- openLink: ${AUTH_CALLBACK_URL}
+- waitForAnimationToEnd:
+    timeout: 5000
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- runFlow:
+    when:
+      visible: Don’t allow
+    commands:
+      - tapOn: Don’t allow
+- runFlow:
+    when:
+      visible: Not Now
+    commands:
+      - tapOn: Not Now
+- runFlow:
+    when:
+      visible: Continue
+    commands:
+      - tapOn: Continue
+- runFlow:
+    when:
+      visible: Save Password?
+    commands:
+      - tapOn: Not Now
+- extendedWaitUntil:
+    visible:
+      id: dashboard-screen
+    timeout: 30000
+- assertVisible:
+    id: dashboard-screen

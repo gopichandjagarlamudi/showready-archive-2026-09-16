@@ -1,0 +1,54 @@
+appId: ${APP_ID}
+---
+- openLink:
+    link: ${APP_OPEN_URL}
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- runFlow:
+    when:
+      visible: Continue
+    commands:
+      - tapOn: Continue
+- extendedWaitUntil:
+    visible:
+      id: sign-in-screen
+    timeout: 30000
+- assertVisible: "Create a new account"
+- tapOn: "Create a new account"
+- extendedWaitUntil:
+    visible:
+      id: sign-up-screen
+    timeout: 30000
+- tapOn:
+    id: create-account-button
+- assertVisible: "Enter your full name."
+- tapOn:
+    id: sign-up-full-name-input
+- inputText: "Functional Tester"
+- tapOn: "Create account"
+- tapOn:
+    id: sign-up-email-input
+- inputText: "not-an-email"
+- tapOn: "Create account"
+- tapOn:
+    id: sign-up-password-input
+- inputText: "notusedqapassword"
+- tapOn: "Create account"
+- tapOn:
+    id: sign-up-confirm-password-input
+- inputText: "differentpassword"
+- tapOn: "Create account"
+- tapOn:
+    id: create-account-button
+- assertVisible: "Passwords do not match."
+- tapOn:
+    id: sign-up-confirm-password-input
+- eraseText
+- inputText: "notusedqapassword"
+- tapOn: "Create account"
+- tapOn:
+    id: create-account-button
+- assertVisible: "Unable to validate email address: invalid format"

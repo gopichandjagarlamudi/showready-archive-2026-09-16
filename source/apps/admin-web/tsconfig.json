@@ -1,0 +1,39 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "allowJs": false,
+    "incremental": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@showready/application": [
+        "../../packages/application/src/index.ts"
+      ],
+      "@showready/contracts": [
+        "../../packages/contracts/src/index.ts"
+      ],
+      "@showready/design-system": [
+        "../../packages/design-system/src/index.ts"
+      ],
+      "@showready/infrastructure": [
+        "../../packages/infrastructure/src/index.ts"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,23 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- openLink: showready://appointments
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- assertVisible:
+    id: appointments-screen
+- assertVisible:
+    id: appointments-open-schedule-sheet
+- tapOn:
+    id: appointments-open-schedule-sheet
+- assertVisible:
+    id: appointments-schedule-sheet
+- assertVisible:
+    id: appointment-open-date-picker
+- tapOn:
+    id: appointments-schedule-sheet
+    label: Close
+    optional: true

@@ -1,0 +1,17 @@
+{
+  "encrypted": true,
+  "format": "Fernet authenticated encryption",
+  "payloadFiles": 520,
+  "ciphertextBytes": 121744204,
+  "decryptionRoundTrip": "passed",
+  "allPayloadChecksums": "passed",
+  "databaseVerification": {
+    "archiveReadable": true,
+    "copySections": 65,
+    "checkedTables": 58,
+    "missingCopySections": [],
+    "rowCountDifferences": [],
+    "fullDatabaseRestoreTested": false
+  },
+  "restoreRehearsalPerformed": false
+}

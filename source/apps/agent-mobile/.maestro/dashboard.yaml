@@ -1,0 +1,19 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- assertVisible:
+    id: dashboard-screen
+- assertVisible:
+    id: invite-sheet-open-button
+- tapOn:
+    id: invite-sheet-open-button
+- extendedWaitUntil:
+    visible:
+      id: invite-button
+    timeout: 8000
+- tapOn:
+    id: invite-button
+- assertVisible:
+    text: Invite ready
+- tapOn:
+    id: invite-sheet-close

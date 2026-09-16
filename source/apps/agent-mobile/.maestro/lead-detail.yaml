@@ -1,0 +1,21 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- openLink: showready://lead/e357e934-6f9a-4d75-bf12-8db0cd1bf701
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- assertVisible:
+    id: lead-detail-screen
+- assertVisible:
+    text: Maestro Review Lead
+- assertVisible:
+    text: Score 9.20
+- assertVisible:
+    id: lead-contact-call-button
+- assertVisible:
+    id: lead-contact-text-button
+- assertVisible:
+    id: lead-contact-email-button

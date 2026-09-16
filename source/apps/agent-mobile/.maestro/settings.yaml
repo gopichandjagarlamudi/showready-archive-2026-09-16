@@ -1,0 +1,27 @@
+appId: ${APP_ID}
+---
+- runFlow: open-app.yaml
+- openLink: showready://settings
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- assertVisible:
+    id: settings-screen
+- assertVisible:
+    id: settings-sign-out-button
+- scrollUntilVisible:
+    element:
+      id: settings-open-privacy-policy-button
+    direction: DOWN
+    timeout: 8000
+- assertVisible:
+    id: settings-open-terms-button
+- assertVisible:
+    id: settings-open-support-button
+- scrollUntilVisible:
+    element:
+      id: settings-open-account-deletion-web-button
+    direction: DOWN
+    timeout: 8000

@@ -1,0 +1,15 @@
+.git
+node_modules
+.turbo
+.next
+.expo
+coverage
+test-results
+*.log
+*.tsbuildinfo
+.DS_Store
+.env.local
+apps/agent-mobile
+apps/intake-web/.next
+apps/intake-web/test-results
+docs

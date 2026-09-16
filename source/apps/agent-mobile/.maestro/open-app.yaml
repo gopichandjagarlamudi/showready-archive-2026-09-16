@@ -1,0 +1,74 @@
+appId: ${APP_ID}
+---
+- openLink:
+    link: ${APP_OPEN_URL}
+- runFlow:
+    when:
+      visible: Open
+    commands:
+      - tapOn: Open
+- runFlow:
+    when:
+      visible: Continue
+    commands:
+      - tapOn: Continue
+- runFlow:
+    when:
+      visible: RECENTLY OPENED
+    commands:
+      - tapOn:
+          point: 50%,63%
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - runFlow:
+          when:
+            visible: RECENTLY OPENED
+          commands:
+            - tapOn:
+                point: 50%,80%
+            - waitForAnimationToEnd:
+                timeout: 5000
+      - runFlow:
+          when:
+            visible: RECENTLY OPENED
+          commands:
+            - tapOn:
+                point: 50%,63%
+            - waitForAnimationToEnd:
+                timeout: 5000
+- waitForAnimationToEnd:
+    timeout: 5000
+- runFlow:
+    when:
+      visible: RECENTLY OPENED
+    commands:
+      - tapOn:
+          point: 50%,63%
+      - waitForAnimationToEnd:
+          timeout: 5000
+      - runFlow:
+          when:
+            visible: RECENTLY OPENED
+          commands:
+            - tapOn:
+                point: 50%,80%
+            - waitForAnimationToEnd:
+                timeout: 5000
+      - runFlow:
+          when:
+            visible: RECENTLY OPENED
+          commands:
+            - tapOn:
+                point: 50%,63%
+            - waitForAnimationToEnd:
+                timeout: 5000
+- runFlow:
+    when:
+      visible: Don’t allow
+    commands:
+      - tapOn: Don’t allow
+- runFlow:
+    when:
+      visible: Don’t Allow
+    commands:
+      - tapOn: Don’t Allow
